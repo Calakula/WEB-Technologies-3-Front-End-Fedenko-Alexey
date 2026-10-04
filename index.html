@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Steppe Trails - Travel Kazakhstan</title>
+  <!-- Bootstrap 5.3 CSS first -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- My own CSS after Bootstrap so it can override -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== NAVBAR (Bootstrap, Task 2) ===== -->
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#home">Steppe Trails</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+              data-bs-target="#mainMenu" aria-controls="mainMenu"
+              aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainMenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="#destinations">Destinations</a></li>
+          <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== SECTION 1: HERO (Bootstrap) ===== -->
+  <header id="home" class="hero text-white text-center d-flex align-items-center">
+    <div class="container py-5">
+      <h1 class="display-5 fw-bold">Discover Kazakhstan</h1>
+      <p class="lead mb-4">Guided tours, mountain hikes and steppe adventures for every traveller.</p>
+      <a href="#destinations" class="btn btn-warning btn-lg me-2">See tours</a>
+      <!-- visible only from tablet up: hidden on phone -->
+      <a href="#contact" class="btn btn-outline-light btn-lg d-none d-md-inline-block">Book a call</a>
+    </div>
+  </header>
+
+  <!-- ===== SECTION 2: ABOUT (Bootstrap, 2 columns, text first on phone) ===== -->
+  <section id="about" class="py-5">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <!-- text: first in HTML, so it is first on phone -->
+        <div class="col-12 col-md-6">
+          <h2 class="mb-3">About us</h2>
+          <p>We are a small team of local guides from Astana. Since 2015 we have shown
+             more than 5000 guests the lakes, canyons and cities of Kazakhstan.</p>
+          <p class="text-muted">Small groups, honest prices, and routes we have walked ourselves.</p>
+          <!-- shown only on phone -->
+          <p class="d-md-none fw-semibold text-warning-emphasis">Tap the menu button to explore the page.</p>
+        </div>
+        <!-- image block: second on phone, first on tablet+ via order-md-first -->
+        <div class="col-12 col-md-6 order-md-first">
+          <div class="about-img rounded shadow"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SECTION 3: SERVICES (TASK 1 - hand-written media queries, NO Bootstrap classes) ===== -->
+  <section id="services" class="svc">
+    <div class="svc-wrap">
+      <h2 class="svc-title">Our services</h2>
+      <p class="svc-intro">Everything you need for a trip, in one place.</p>
+      <div class="svc-list">
+        <article class="svc-item">
+          <div class="svc-icon">&#128652;</div>
+          <h3>Guided tours</h3>
+          <p>Day trips and multi-day routes with a local guide.</p>
+        </article>
+        <article class="svc-item">
+          <div class="svc-icon">&#127957;</div>
+          <h3>Hiking</h3>
+          <p>Mountain trails for beginners and experienced hikers.</p>
+        </article>
+        <article class="svc-item">
+          <div class="svc-icon">&#127960;</div>
+          <h3>City breaks</h3>
+          <p>Astana, Almaty and Turkistan in a comfortable weekend.</p>
+        </article>
+        <article class="svc-item">
+          <div class="svc-icon">&#128663;</div>
+          <h3>Transfers</h3>
+          <p>Airport pickup and private cars with a driver.</p>
+        </article>
+        <article class="svc-item">
+          <div class="svc-icon">&#127829;</div>
+          <h3>Local food</h3>
+          <p>Tastings of beshbarmak, baursak and fresh kymyz.</p>
+        </article>
+        <article class="svc-item">
+          <div class="svc-icon">&#128247;</div>
+          <h3>Photo tours</h3>
+          <p>Sunrise and sunset spots chosen for the best light.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SECTION 4: DESTINATIONS (Bootstrap cards: 1 / 2 / 3 per row) ===== -->
+  <section id="destinations" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-4">Popular destinations</h2>
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        <div class="col">
+          <div class="card h-100 shadow-sm">
+            <div class="card-img-top dest dest-1"></div>
+            <div class="card-body">
+              <h5 class="card-title">Charyn Canyon</h5>
+              <p class="card-text">Red rock walls and a trail along the river. One day from Almaty.</p>
+            </div>
+            <div class="card-footer d-flex justify-content-between align-items-center">
+              <span class="fw-bold">from 45,000 KZT</span>
+              <button class="btn btn-sm btn-dark" data-bs-toggle="modal" data-bs-target="#bookModal">Book</button>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100 shadow-sm">
+            <div class="card-img-top dest dest-2"></div>
+            <div class="card-body">
+              <h5 class="card-title">Big Almaty Lake</h5>
+              <p class="card-text">Turquoise mountain lake at 2500 m with views of the Tian Shan.</p>
+            </div>
+            <div class="card-footer d-flex justify-content-between align-items-center">
+              <span class="fw-bold">from 30,000 KZT</span>
+              <button class="btn btn-sm btn-dark" data-bs-toggle="modal" data-bs-target="#bookModal">Book</button>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100 shadow-sm">
+            <div class="card-img-top dest dest-3"></div>
+            <div class="card-body">
+              <h5 class="card-title">Burabay</h5>
+              <p class="card-text">Pine forests, lakes and granite cliffs, 3 hours from Astana.</p>
+            </div>
+            <div class="card-footer d-flex justify-content-between align-items-center">
+              <span class="fw-bold">from 38,000 KZT</span>
+              <button class="btn btn-sm btn-dark" data-bs-toggle="modal" data-bs-target="#bookModal">Book</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SECTION 5: FAQ (Bootstrap accordion) ===== -->
+  <section id="faq" class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">Questions</h2>
+      <div class="row justify-content-center">
+        <div class="col-12 col-lg-8">
+          <div class="accordion" id="faqAccordion">
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#q1">
+                  How big are the groups?
+                </button>
+              </h3>
+              <div id="q1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">Between 4 and 10 people, so everyone can hear the guide.</div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q2">
+                  Do I need special equipment?
+                </button>
+              </h3>
+              <div id="q2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">Only comfortable shoes and a jacket. We provide the rest for hikes.</div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q3">
+                  Can I cancel a booking?
+                </button>
+              </h3>
+              <div id="q3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">Yes, free of charge up to 48 hours before the tour.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SECTION 6: CONTACT (Bootstrap) ===== -->
+  <section id="contact" class="py-5 bg-dark text-white">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-12 col-md-5">
+          <h2>Contact us</h2>
+          <p class="mb-1">Astana, Kazakhstan</p>
+          <p class="mb-1">info@steppetrails.example</p>
+          <p>+7 700 000 00 00</p>
+        </div>
+        <div class="col-12 col-md-7">
+          <div class="row g-2">
+            <div class="col-12 col-sm-6">
+              <input type="text" class="form-control" placeholder="Your name" aria-label="Name">
+            </div>
+            <div class="col-12 col-sm-6">
+              <input type="email" class="form-control" placeholder="Email" aria-label="Email">
+            </div>
+            <div class="col-12">
+              <textarea class="form-control" rows="3" placeholder="Message" aria-label="Message"></textarea>
+            </div>
+            <div class="col-12">
+              <button type="button" class="btn btn-warning w-100">Send</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-black text-white-50 text-center py-3 small">
+    &copy; 2026 Steppe Trails. Student project.
+  </footer>
+
+  <!-- ===== MODAL (second Bootstrap component) ===== -->
+  <div class="modal fade" id="bookModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Book a tour</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">Leave your contacts in the form below and we will call you within a day.</div>
+        <div class="modal-footer">
+          <a href="#contact" class="btn btn-warning" data-bs-dismiss="modal">Go to form</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS bundle before </body> -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

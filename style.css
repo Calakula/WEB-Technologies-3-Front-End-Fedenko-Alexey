@@ -1,0 +1,90 @@
+/* ===== my own styles (loaded after Bootstrap) ===== */
+html { scroll-behavior: smooth; }
+section { scroll-margin-top: 56px; } /* sticky navbar offset */
+img, .about-img, .dest { max-width: 100%; }
+
+/* ---------- Hero ---------- */
+.hero {
+  min-height: 70vh;
+  background: linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)),
+              linear-gradient(135deg, #1b5e20, #0d47a1);
+}
+
+/* ---------- About image / card images (gradient placeholders) ---------- */
+.about-img {
+  height: 220px;
+  background: linear-gradient(135deg, #ffb300, #e65100);
+}
+.dest { height: 180px; }
+.dest-1 { background: linear-gradient(135deg, #bf360c, #ff8a65); }
+.dest-2 { background: linear-gradient(135deg, #006064, #4dd0e1); }
+.dest-3 { background: linear-gradient(135deg, #1b5e20, #81c784); }
+
+/* =====================================================
+   TASK 1: SERVICES - hand-written, MOBILE-FIRST
+   Only my own CSS (Grid + @media min-width).
+   No Bootstrap classes, no fixed widths, no absolute.
+   ===================================================== */
+
+/* BASE = phone (375px): 1 column */
+.svc {
+  background: #fff8e1;
+  padding: 2rem 1rem;
+}
+.svc-wrap {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+.svc-title {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: .5rem;
+}
+.svc-intro {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+.svc-list {
+  display: grid;
+  grid-template-columns: 1fr;   /* 1 item per row */
+  gap: 1rem;
+}
+.svc-item {
+  background: #fff;
+  border-radius: .5rem;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,.1);
+}
+.svc-icon { font-size: 2rem; }
+.svc-item h3 { font-size: 1.1rem; margin: .5rem 0; }
+.svc-item p { margin: 0; }
+
+/* BREAKPOINT 1: tablet (768px+) -> 2 columns + bigger heading + more spacing */
+@media (min-width: 768px) {
+  .svc { padding: 3rem 2rem; }
+  .svc-title { font-size: 2rem; }
+  .svc-list {
+    grid-template-columns: repeat(2, 1fr);  /* 2 per row */
+    gap: 1.5rem;
+  }
+}
+
+/* BREAKPOINT 2: laptop (1024px+) -> 3 columns, left-aligned items, even bigger heading */
+@media (min-width: 1024px) {
+  .svc { padding: 4rem 2rem; }
+  .svc-title { font-size: 2.5rem; }
+  .svc-list {
+    grid-template-columns: repeat(3, 1fr);  /* 3 per row */
+    gap: 2rem;
+  }
+  .svc-item {
+    text-align: left;       /* alignment changes too */
+    padding: 1.5rem;
+  }
+}
+
+/* ---------- Small extra: about image taller on tablet+ ---------- */
+@media (min-width: 768px) {
+  .about-img { height: 320px; }
+}
